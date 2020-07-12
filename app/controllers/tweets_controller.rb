@@ -6,6 +6,7 @@ class TweetsController < ApplicationController
 	def create
 		@tweet = Tweet.new(tweet_params)
 		@tweet.save
+		flash[:success] = "Your tweet was successfully published!"
 		redirect_to new_tweet_path
 	end
 
